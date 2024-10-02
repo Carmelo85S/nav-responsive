@@ -6,15 +6,17 @@
     box-sizing: border-box;
 }
 
-header {
-    background-color: rgb(174, 46, 0);
-    padding: 20px;
-}
-
 body {
     font-family: "DM Serif Display", system-ui;
     font-weight: 400;
     font-style: normal;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+header {
+    background-color: #1A252F;
+    padding: 20px;
 }
 
 .navigation {
@@ -25,7 +27,8 @@ body {
 
 .logo {
     font-size: 25px;
-    color: white;
+    letter-spacing: 2px;
+    color: #ECF0F1;
 }
 
 .list-container {
@@ -33,43 +36,105 @@ body {
     align-items: center;
 }
 
-.list-container li {
-    margin: 0 10px;
-}
-
 .list-container li a {
-    color: white;
-    padding: 12px 22px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    letter-spacing: 2px;
+    color: #ECF0F1;
+    padding: 23px 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 .list-container li a:hover {
-    background-color: rgba(137, 6, 6, 0.411);
+    background-color: #34495E;
+    color: #FFFFFF;
 }
 
 .active {
-    background-color: rgba(137, 6, 6, 0.411);
-    color: rgb(103, 0, 0);
+    background-color: #34495E;
+    color: #e7e4e4;
 }
 
 .icon {
     display: none;
 }
 
-/* Responsive styles */
-@media screen and (min-width:320px) and (max-width: 900px) {
+/* Hero Section */
+.hero {
+    background:url(../image/city-skyline.jpg); 
+    color: #1A252F;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+    min-height: 250px;
+    background-color: rgba(199, 201, 202, 0.444);
+    box-shadow: 2px 2px 10px #1A252F;
+    border-radius: 2px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+.hero-button {
+    padding: 15px 30px;
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #1A252F;
+}
+
+/* Responsive*/
+@media screen and (max-width: 320px){
+    .hero {
+        background: url(../image/city-skyline3.jpg) no-repeat center center;     
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .hero {
+        background:url(../image/city-skyline2.jpg)no-repeat center center;     
+        background-size: cover; 
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+    .navigation {
+        justify-content: space-between;
+    }
+
     .list-container {
         display: none;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        height: 90vh;
         position: absolute;
-        background-color: rgb(199, 93, 54);
-        top: 60px;
+        background-color: #1A252F;
+        top: 93px;
         left: 0;
-        gap:50px;
+        gap: 80px;
     }
 
     .list-container.show {
@@ -79,11 +144,20 @@ body {
     .icon {
         display: block;
         font-size: 30px;
-        color: white;
+        color: #ECF0F1;
+        margin-top: 20px;
         cursor: pointer;
     }
 
-    .active{
-        background-color: inherit;
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        padding: 12px 25px;
     }
 }
